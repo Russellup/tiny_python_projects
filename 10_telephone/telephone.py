@@ -40,11 +40,11 @@ def get_args():
                         
     args = parser.parse_args()
 
+    if not 0 <= args.mutations < 1:
+        parser.error(f'--mutations "{args.mutations}" must be between 0 and 1')
+    
     if os.path.isfile(args.text):
         args.text = open(args.text).read().rstrip()
-
-    if not 0 <= args.mutations < 1:
-        parser.error(f'--mutations "{args.mutations}" must be between 0 and 1')    
 
     return args
 
@@ -62,7 +62,7 @@ def main():
     
     #random.sample(range(len(text)), num_mutations))
     for index in random.sample(range(len(text)), num_mutations):
-        #print(index)
+        print(index)
         #print(text[index])
         new_char = random.choice(alpha)
         #print(new_char)

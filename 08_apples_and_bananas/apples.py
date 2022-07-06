@@ -40,6 +40,8 @@ def main():
     """Make a jazz noise here"""
 
     args = get_args()
+    print('======')
+    print(args)
     text = args.text
     vowel = args.vowel
     
@@ -47,7 +49,9 @@ def main():
     print('text = "{}"',format(text))
     print('vowel = "{}"',format(vowel))
     
-
+    new = ''
+    for char in text:
+        print(char, char in 'aeiou')
 
 # --------------------------------------------------
 if __name__ == '__main__':
